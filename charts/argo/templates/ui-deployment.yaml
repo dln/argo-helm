@@ -14,6 +14,7 @@ spec:
         app: {{ .Release.Name }}-{{ .Values.ui.name}}
         release: {{ .Release.Name }}
     spec:
+      serviceAccount: {{ .Values.ui.serviceAccount }}
       containers:
         - name: ui
           image: "{{ .Values.images.namespace }}/{{ .Values.images.ui }}:{{ .Values.images.tag }}"

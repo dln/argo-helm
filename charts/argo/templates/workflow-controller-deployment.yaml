@@ -15,6 +15,7 @@ spec:
         app: {{ .Release.Name }}-{{ .Values.controller.name}}
         release: {{ .Release.Name }}
     spec:
+      serviceAccount: {{ .Values.controller.serviceAccount }}
       containers:
         - name: controller
           image: "{{ .Values.images.namespace }}/{{ .Values.images.controller }}:{{ .Values.images.tag }}"
